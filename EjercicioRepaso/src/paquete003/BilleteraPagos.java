@@ -88,7 +88,7 @@ public class BilleteraPagos {
                 obtenerMes());
         
         for (int i =0 ; i<pagos.size(); i++) {
-            cadena = String.format("%s\n%s\n", cadena, obtenerPagos().get(i));
+            cadena = String.format("%s\n%s", cadena, obtenerPagos().get(i));
         }
         
         cadena = String.format("%s\nGatos pagos: %.2f\n", 

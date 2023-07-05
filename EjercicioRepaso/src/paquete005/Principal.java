@@ -47,6 +47,11 @@ public class Principal {
         listapagos.add(telefonoFinca);
         
         BilleteraPagos pago = new BilleteraPagos(persona, "Octubre", listapagos);
+        
+        for (int i =0 ; i<pago.obtenerPagos().size(); i++) {
+            pago.obtenerPagos().get(i).calcularPago();            
+        } 
+        pago.calcularGastoPagos();
         System.out.println(pago);
     }
 }
