@@ -17,13 +17,11 @@ public class PagoAguaPotable extends Pago {
     private double costoConsumoCubicos;
     
     public PagoAguaPotable(String t, double p) {
-        super(p);
         tipo = t;
     }
     
     @Override
     public void calcularPago(){
-        pago = 0;
         if(tipo.equals("comercial")){
             tarifaFija = 2.20;
             metrosCubicosConsumo = 100.2;

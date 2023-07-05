@@ -16,5 +16,4 @@ public class Persona {
     private int edad;
     private String cedula;
     public Ciudad ciudad;
-    
 }

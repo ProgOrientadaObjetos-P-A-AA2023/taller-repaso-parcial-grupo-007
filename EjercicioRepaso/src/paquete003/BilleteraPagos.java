@@ -27,6 +27,7 @@ public class BilleteraPagos {
     public PagoTelefonoConvencional telefonoCasa;
     public PagoTelefonoConvencional telefonoFinca;
     
+    @Override
     public String toString(){
         /*
             Se debe presentar el reporte que incluya
