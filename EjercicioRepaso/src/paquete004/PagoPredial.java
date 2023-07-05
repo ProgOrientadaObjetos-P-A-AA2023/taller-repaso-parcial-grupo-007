@@ -15,10 +15,13 @@ public class PagoPredial extends Pago {
     private double valorPropiedad;
     private double porcentaje;
     
+    public PagoPredial(double vp, double p) {
+        valorPropiedad = vp;
+        porcentaje = p;
+    }
+    
     @Override
     public void calcularPago(){
-        valorPropiedad = 56000;
-        porcentaje = 10;
         pago = valorPropiedad - ((valorPropiedad*porcentaje)/100);
     }
 
@@ -36,5 +39,16 @@ public class PagoPredial extends Pago {
 
     public void establecerPorcentaje(double n) {
         porcentaje = n;
+    }
+    
+    @Override
+    public String toString () {
+        String cadena = String.format("PAGO PREDIAL\n"
+                + "Valor Propiedad: %.2f\n"
+                + "Porcentaje: %.2f\n%s\n",              
+                obtenerValorPropiedad(),
+                obtenerPorcentaje(),
+                obtenerPago());
+        return cadena;
     }
 }

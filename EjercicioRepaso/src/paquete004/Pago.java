@@ -20,4 +20,11 @@ public abstract class Pago {
     }
 
     public abstract void calcularPago();
+    
+    @Override
+    public String toString () {
+        String cadena = String.format("Valor Pago Final: %.2f\n",
+                obtenerPago());
+        return cadena;
+    }
 }

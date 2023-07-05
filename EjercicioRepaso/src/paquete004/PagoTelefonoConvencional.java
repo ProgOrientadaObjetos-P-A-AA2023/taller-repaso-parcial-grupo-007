@@ -14,12 +14,15 @@ public class PagoTelefonoConvencional extends Pago{
     private double tarifa;
     private double minutosConsumidos;
     private double costoMinuto;
-
+    
+    public PagoTelefonoConvencional(double t, double m, double cm) {
+        tarifa = t;
+        minutosConsumidos = m;
+        costoMinuto = cm;
+    }
+    
     @Override
     public void calcularPago(){
-        tarifa = 6.20;
-        minutosConsumidos = 100;
-        costoMinuto = 0.2;
         pago = tarifa + (minutosConsumidos * costoMinuto);
     }
     
@@ -45,5 +48,18 @@ public class PagoTelefonoConvencional extends Pago{
 
     public void establecerCostoMinuto(double n) {
         costoMinuto = n;
+    }
+    
+    @Override
+    public String toString () {
+        String cadena = String.format("PAGO TELEFONO CONVENCIONAL\n"
+                + "Tarifa: %.2f\n"
+                + "Minutos consumidos: %.2f\n"
+                + "Costo minutos: %.2f\n%s\n",              
+                obtenerTarifa(),
+                obtenerMinutosConsumidos(),
+                obtenerCostoMinuto(),
+                obtenerPago());
+        return cadena;
     }
 }

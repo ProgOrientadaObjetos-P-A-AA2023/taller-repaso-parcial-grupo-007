@@ -16,21 +16,18 @@ public class PagoAguaPotable extends Pago {
     private double metrosCubicosConsumo;
     private double costoConsumoCubicos;
     
-    public PagoAguaPotable(String t, double p) {
+    public PagoAguaPotable(String t, double tf, double m, double cm) {
         tipo = t;
+        tarifaFija = tf;
+        metrosCubicosConsumo = m;
+        costoConsumoCubicos = cm;
     }
     
     @Override
     public void calcularPago(){
         if(tipo.equals("comercial")){
-            tarifaFija = 2.20;
-            metrosCubicosConsumo = 100.2;
-            costoConsumoCubicos = 0.2;
             pago = tarifaFija + (metrosCubicosConsumo * costoConsumoCubicos) + 15;
         }else{
-            tarifaFija = 2.20;
-            metrosCubicosConsumo = 100.2;
-            costoConsumoCubicos = 0.2;
             pago = tarifaFija + (metrosCubicosConsumo * costoConsumoCubicos);
         }
     }
@@ -65,5 +62,20 @@ public class PagoAguaPotable extends Pago {
 
     public void establecerCostoConsumoCubicos(double n) {
         costoConsumoCubicos = n;
+    }
+    
+    @Override
+    public String toString () {
+        String cadena = String.format("PAGO AGUA POTABLE\n"
+                + "Tipo: %s\n"
+                + "Tarifa fija: %.2f\n"
+                + "Metros cubicos de consumo: %.2f\n"
+                + "Costo metros cubicos de consumo: %.2f\n%s\n",
+                obtenerTipo(),
+                obtenerTarifaFija(),
+                obtenerMetrosCubicosConsumo(),
+                obtenerCostoConsumoCubicos(),
+                obtenerPago());
+        return cadena;
     }
 }
