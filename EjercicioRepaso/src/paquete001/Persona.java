@@ -11,10 +11,10 @@ import paquete002.Ciudad;
  * @author reroes
  */
 public class Persona {
-    String nombre;
-    String apellido;
-    int edad;
-    String cedula;
+    private String nombre;
+    private String apellido;
+    private int edad;
+    private String cedula;
     public Ciudad ciudad;
     
 }
