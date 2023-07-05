@@ -17,10 +17,10 @@ import paquete004.PagoTelefonoConvencional;
  * @author reroes
  */
 public class BilleteraPagos {
-    public Persona persona;
-    public double gastoPagos;
-    public String mes;
-    public ArrayList<Pago> pagos = new ArrayList();
+    private Persona persona;
+    private double gastoPagos;
+    private String mes;
+    private ArrayList<Pago> pagos;
     
     /*public PagoAguaPotable aguaCasa;
     public PagoAguaPotable aguaComercio;
@@ -30,14 +30,73 @@ public class BilleteraPagos {
     public PagoPredial casa2;
     public PagoTelefonoConvencional telefonoCasa;
     public PagoTelefonoConvencional telefonoFinca;*/
+
+    public BilleteraPagos(Persona pe, double g, String m, ArrayList<Pago> p) {
+        persona = pe;
+        gastoPagos = g;
+        mes = m;
+        pagos = p;
+    }
+
+    public Persona obtenerPersona() {
+        return persona;
+    }
+
+    public void establecerPersona(Persona n) {
+        persona = n;
+    }
+
+    public double obtenerGastoPagos() {
+        return gastoPagos;
+    }
+
+    public void calcularGastoPagos() {
+        for (int i =0 ; i<pagos.size(); i++) {
+            gastoPagos+=pagos.get(i).obtenerPago();
+        }
+    }
+
+    public String obtenerMes() {
+        return mes;
+    }
+
+    public void establecerMes(String n) {
+        mes = n;
+    }
+
+    public ArrayList<Pago> obtenerPagos() {
+        return pagos;
+    }
+
+    public void establecerPagos(ArrayList<Pago> n) {
+        pagos = n;
+    }    
     
     @Override
     public String toString(){
-        /*
-            Se debe presentar el reporte que incluya
-            información correspondiente oportuna
-        */
-        return "Presentar Reporte";
+        String cadena = String.format("\tREPORTE:\n"
+                + "Nombre: %s\n"
+                + "Apellido: %s\n"
+                + "Edad: %d\n"
+                + "ID: %s\n"
+                + "Ciudad: %s\n"
+                + "Mes: %s"
+                + "LISTA DE PAGOS\n", obtenerPersona().obtenerNombre(), 
+                obtenerPersona().obtenerApellido(),
+                obtenerPersona().obtenerEdad(),
+                obtenerPersona().obtenerCedula(),
+                obtenerPersona().obtenerCiudad().obtenerNombreCiudad(),
+                obtenerMes());
+        
+        for (int i =0 ; i<pagos.size(); i++) {
+            cadena = String.format("%s\n%s\n", cadena, obtenerPagos().get(i));
+        }
+        
+        cadena = String.format("%s\nGatos pagos: %.2f\n", 
+                cadena, 
+                obtenerGastoPagos());
+        
+        return cadena;
     }
     
 }
