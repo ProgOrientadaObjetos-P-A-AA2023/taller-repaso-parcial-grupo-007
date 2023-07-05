@@ -31,9 +31,8 @@ public class BilleteraPagos {
     public PagoTelefonoConvencional telefonoCasa;
     public PagoTelefonoConvencional telefonoFinca;*/
 
-    public BilleteraPagos(Persona pe, double g, String m, ArrayList<Pago> p) {
+    public BilleteraPagos(Persona pe, String m, ArrayList<Pago> p) {
         persona = pe;
-        gastoPagos = g;
         mes = m;
         pagos = p;
     }
@@ -80,7 +79,7 @@ public class BilleteraPagos {
                 + "Edad: %d\n"
                 + "ID: %s\n"
                 + "Ciudad: %s\n"
-                + "Mes: %s"
+                + "Mes: %s\n"
                 + "LISTA DE PAGOS\n", obtenerPersona().obtenerNombre(), 
                 obtenerPersona().obtenerApellido(),
                 obtenerPersona().obtenerEdad(),

@@ -79,7 +79,7 @@ public class PagoLuzElectrica extends Pago {
                 obtenerTarifaBase(),
                 obtenerKilovatiosConsumidos(),
                 obtenerCostoKilovatio(),
-                obtenerPago());
+                super.toString());
         return cadena;
     }
 }

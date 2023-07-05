@@ -59,7 +59,7 @@ public class PagoTelefonoConvencional extends Pago{
                 obtenerTarifa(),
                 obtenerMinutosConsumidos(),
                 obtenerCostoMinuto(),
-                obtenerPago());
+                super.toString());
         return cadena;
     }
 }

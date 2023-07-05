@@ -48,7 +48,7 @@ public class PagoPredial extends Pago {
                 + "Porcentaje: %.2f\n%s\n",              
                 obtenerValorPropiedad(),
                 obtenerPorcentaje(),
-                obtenerPago());
+                super.toString());
         return cadena;
     }
 }

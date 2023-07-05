@@ -75,7 +75,7 @@ public class PagoAguaPotable extends Pago {
                 obtenerTarifaFija(),
                 obtenerMetrosCubicosConsumo(),
                 obtenerCostoConsumoCubicos(),
-                obtenerPago());
+                super.toString());
         return cadena;
     }
 }
