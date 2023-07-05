@@ -10,21 +10,62 @@ import paquete001.Persona;
  *
  * @author reroes
  */
-public class PagoAguaPotable {
-    public double calcularPago(String tipo){
-        double pago = 0;
+public class PagoAguaPotable extends Pago {
+    private String tipo;
+    private double tarifaFija;
+    private double metrosCubicosConsumo;
+    private double costoConsumoCubicos;
+    
+    public PagoAguaPotable(String t, double p) {
+        super(p);
+        tipo = t;
+    }
+    
+    @Override
+    public void calcularPago(){
+        pago = 0;
         if(tipo.equals("comercial")){
-            double tarifaFija = 2.20;
-            double metrosCubicosConsumo = 100.2;
-            double costoConsumoCubicos = 0.2;
+            tarifaFija = 2.20;
+            metrosCubicosConsumo = 100.2;
+            costoConsumoCubicos = 0.2;
             pago = tarifaFija + (metrosCubicosConsumo * costoConsumoCubicos) + 15;
         }else{
-            double tarifaFija = 2.20;
-            double metrosCubicosConsumo = 100.2;
-            double costoConsumoCubicos = 0.2;
+            tarifaFija = 2.20;
+            metrosCubicosConsumo = 100.2;
+            costoConsumoCubicos = 0.2;
             pago = tarifaFija + (metrosCubicosConsumo * costoConsumoCubicos);
         }
-        
-        return pago;
+    }
+
+    public String obtenerTipo() {
+        return tipo;
+    }
+
+    public void establecerTipo(String n) {
+        tipo = n;
+    }
+
+    public double obtenerTarifaFija() {
+        return tarifaFija;
+    }
+
+    public void establecerTarifaFija(double n) {
+        tarifaFija = n;
+    }
+
+    public double obtenerMetrosCubicosConsumo() {
+        return metrosCubicosConsumo;
+    }
+
+    public void establecerMetrosCubicosConsumo(double n) {
+        metrosCubicosConsumo = n;
+    }
+
+    public double obtenerCostoConsumoCubicos() {
+        return costoConsumoCubicos;
+    }
+
+    public void establecerCostoConsumoCubicos(double n) {
+        costoConsumoCubicos = n;
     }
 }
