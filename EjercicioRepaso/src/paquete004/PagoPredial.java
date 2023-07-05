@@ -11,11 +11,30 @@ import paquete002.Propiedad;
  *
  * @author reroes
  */
-public class PagoPredial {
-    public double calcularPago(){
-        double valorPropiedad = 56000;
-        double porcentaje = 10;
-        double pago = valorPropiedad - ((valorPropiedad*porcentaje)/100);
-        return pago;
+public class PagoPredial extends Pago {
+    private double valorPropiedad;
+    private double porcentaje;
+    
+    @Override
+    public void calcularPago(){
+        valorPropiedad = 56000;
+        porcentaje = 10;
+        pago = valorPropiedad - ((valorPropiedad*porcentaje)/100);
+    }
+
+    public double obtenerValorPropiedad() {
+        return valorPropiedad;
+    }
+
+    public void establecerValorPropiedad(double n) {
+        valorPropiedad = n;
+    }
+
+    public double obtenerPorcentaje() {
+        return porcentaje;
+    }
+
+    public void establecerPorcentaje(double n) {
+        porcentaje = n;
     }
 }

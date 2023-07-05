@@ -8,6 +8,16 @@ package paquete004;
  *
  * @author SALA H
  */
-public class Pago {
-    
+public abstract class Pago {
+    protected double pago;
+
+    public Pago() {
+        pago = 0;
+    }
+
+    public double obtenerPago() {
+        return pago;
+    }
+
+    public abstract void calcularPago();
 }

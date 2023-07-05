@@ -15,14 +15,9 @@ public class PagoLuzElectrica extends Pago {
     private double kilovatiosConsumidos;
     private double costoKilovatio;
     private String ciudad;
-
-    public PagoLuzElectrica(double p) {
-        super(p);
-    }
     
     @Override
     public void calcularPago() {
-        
         tarifaBase = 10.20;
         kilovatiosConsumidos = 80;
         costoKilovatio = 0.5;
