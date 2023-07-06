@@ -12,7 +12,7 @@ public class DatosLuz {
     /*
     
     */
-    public static double[][] datosLoja(){
+    public double[][] datosLoja(){
         double[][] informacion = {
             {12.0, 100.2, 0.2},
             {12.1, 50.2, 0.4},
@@ -21,7 +21,7 @@ public class DatosLuz {
         return informacion;
     }
     
-    public static double[][] datosGeneral(){
+    public double[][] datosGeneral(){
         double[][] informacion = {
             {11.20, 80.2, 0.3},
             {12.40, 70.2, 0.3},

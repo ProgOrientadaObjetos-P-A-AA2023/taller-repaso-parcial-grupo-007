@@ -26,9 +26,6 @@ public class PagoLuzElectrica extends Pago {
     
     @Override
     public void calcularPago() {
-        tarifaBase = 10.20;
-        kilovatiosConsumidos = 80;
-        costoKilovatio = 0.5;
         if (ciudad.obtenerNombreCiudad().equals("Loja")) {
             pago = tarifaBase + (kilovatiosConsumidos * costoKilovatio / 2);
         } else {
